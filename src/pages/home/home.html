@@ -1,14 +1,30 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title center text-center>Get Started</ion-title>
+    </ion-navbar>
+
+  <ion-toolbar padding>
+    <ion-segment [(ngModel)]="loginOptions">
+      <ion-segment-button value="login" >
+        Login
+      </ion-segment-button>
+      <ion-segment-button value="register">
+        Register
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content [ngSwitch]="loginOptions" class="loginContent">
+  <ion-list *ngSwitchCase="'login'">
+    <ion-item>
+     LOGIN FORM
+    </ion-item>
+  </ion-list>
+
+<ion-list *ngSwitchCase="'register'">
+    <ion-item>
+     Register FORM
+    </ion-item>
+  </ion-list>
 </ion-content>
