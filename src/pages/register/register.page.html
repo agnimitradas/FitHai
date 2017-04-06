@@ -23,6 +23,8 @@
                             <ion-input type="name" value="" [formControl]="authForm.controls['name']" required></ion-input>
                         </ion-item>
 
+                        <h2 class="error-box" *ngIf="authForm.controls['name'].hasError('required') && authForm.controls['name'].touched">* Name is required!</h2>
+                        
                         <ion-item>
                             <ion-label color="greenCustom">Email:</ion-label>
                             <ion-input type="email" value="" [formControl]="authForm.controls['email']" required></ion-input>

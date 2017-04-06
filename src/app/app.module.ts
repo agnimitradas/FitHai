@@ -6,14 +6,15 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { LoginPage,RegisterPage } from '../pages/pages.export';
+import { LoginPage,RegisterPage,ChoosePlanPage } from '../pages/pages.export';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ChoosePlanPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +24,8 @@ import { LoginPage,RegisterPage } from '../pages/pages.export';
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ChoosePlanPage
   ],
   providers: [
     StatusBar,

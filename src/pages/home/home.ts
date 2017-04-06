@@ -15,7 +15,7 @@ export class HomePage {
   }
 
   oldSchoolLogIn(){
-    this.navCtrl.push(LoginPage,{},{animate: true, direction: 'back'});
+    this.navCtrl.push(LoginPage);
   }
 
   fbLogIn(){
