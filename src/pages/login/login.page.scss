@@ -1,4 +1,4 @@
-page-home {
+login-page {
     ion-content {
         background: url('../../assets/images/bg1.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -24,6 +24,19 @@ page-home {
         margin-bottom: 0 !important;
     }
     ion-item {
-        background-color: #fff;
+        background-color: transparent;
+    }
+    input-cover activated {
+        position: fixed;
+    }
+    .error-box {
+        font-weight: bold;
+        color: red;
+    }
+    .list a.item {
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 2px;
     }
 }

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Register Now!
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content fullscreen [attr.noScroll]="shouldScroll" class="loginContent">
+
+    <ion-card center text-center class="ionCardLogin">
+        <ion-card-header padding>
+            <h1 padding color="light">Please fill out all the fields</h1>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value)" novalidate>
+                    <div class="gorupInputs">
+
+                        <ion-item>
+                            <ion-label color="greenCustom">Name:</ion-label>
+                            <ion-input type="name" value="" [formControl]="authForm.controls['name']" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label color="greenCustom">Email:</ion-label>
+                            <ion-input type="email" value="" [formControl]="authForm.controls['email']" required></ion-input>
+                        </ion-item>
+
+                        <h2 class="error-box" *ngIf="authForm.controls['email'].hasError('required') && authForm.controls['email'].touched">* Email is required!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['email'].hasError('pattern') && authForm.controls['email'].touched">* Please enter a valid email!</h2>
+
+                        <ion-item>
+                            <ion-label color="greenCustom">Password:</ion-label>
+                            <ion-input type="password" minlength="5" maxlength="50" [formControl]="authForm.controls['password']" required></ion-input>
+                        </ion-item>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('required') && authForm.controls['password'].touched">* Password is required!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('minlength') && authForm.controls['password'].touched">* Mininum 6 characters!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('maxlength') && authForm.controls['password'].touched">* Maximum 6 characters!</h2>
+                    </div>
+                    <div>
+                        <button padding type="submit" [disabled]="authForm.controls['email'].invalid || authForm.controls['password'].invalid" ion-button full color="greenCustom">Submit</button>
+                    </div>
+
+                </form>
+
+
+
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,30 +1,23 @@
 <ion-header>
     <ion-navbar>
-        <ion-title center text-center>Get Started</ion-title>
+        <ion-title center text-center>
+            <p>Go Ahead - Make the First Step</p>
+        </ion-title>
     </ion-navbar>
 
-  <ion-toolbar padding>
-    <ion-segment [(ngModel)]="loginOptions">
-      <ion-segment-button value="login" >
-        Login
-      </ion-segment-button>
-      <ion-segment-button value="register">
-        Register
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content [ngSwitch]="loginOptions" class="loginContent">
-  <ion-list *ngSwitchCase="'login'">
-    <ion-item>
-     LOGIN FORM
-    </ion-item>
-  </ion-list>
+<ion-content fullscreen [attr.noScroll]="shouldScroll" class="loginContent">
 
-<ion-list *ngSwitchCase="'register'">
-    <ion-item>
-     Register FORM
-    </ion-item>
-  </ion-list>
+    <ion-card center text-center class="ionCardLogin">
+        <ion-card-header>
+            <h1 padding color="light">Login</h1>
+        </ion-card-header>
+        <ion-card-content>
+            <button ion-button full (click)="fbLogIn()"><ion-icon name="logo-facebook"></ion-icon> Login with Facebook</button>
+            <button ion-button full color="danger" (click)="googleLogin()"><ion-icon name="logo-google" (click)="oldSchoolLogIn1()"></ion-icon>Login with Google+</button>
+            <button ion-button full color="dark" (click)="oldSchoolLogIn()">Old School Login</button>
+
+        </ion-card-content>
+    </ion-card>
 </ion-content>
