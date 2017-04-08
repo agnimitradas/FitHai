@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms'; 
 
+import { RegistrationService } from '../../shared/shared-pages.export';
 
 @Component({
   selector: 'register-page',
@@ -10,7 +11,15 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController,public _formBuilder:FormBuilder) {
+  registrationInputs= {
+    name:'',
+    email:'',
+    password:''
+  };
+
+  constructor(public navCtrl: NavController,
+              public _formBuilder:FormBuilder,
+              private _registrationService:RegistrationService) {
     
   }
 authForm = this._formBuilder.group({
@@ -21,5 +30,6 @@ authForm = this._formBuilder.group({
         
   register(){
       this.navCtrl.push(RegisterPage);
+      //this._registrationService.doRegister(this.registrationInputs);
   }
 }

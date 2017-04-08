@@ -5,8 +5,10 @@ import { HomePage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http'
 
 import { LoginPage,RegisterPage,ChoosePlanPage } from '../pages/pages.export';
+import { RegistrationService } from '../shared/shared-pages.export';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { LoginPage,RegisterPage,ChoosePlanPage } from '../pages/pages.export';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RegistrationService,
+    HttpModule
   ]
 })
 export class AppModule {}
