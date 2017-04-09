@@ -17,4 +17,12 @@ export class RegistrationService {
                          .map((res:Response) => res.json()) 
                          .catch((error:any) => Observable.throw(error.json().error || 'Server error')); 
     }   
+
+    authenticateLogin(userDetails:Object): Observable<any> {
+        let headers      = new Headers({ 'Content-Type': 'application/json' }); 
+        let options       = new RequestOptions({ headers: headers }); 
+        return this._http.post('URL', userDetails, options) 
+                         .map((res:Response) => res.json()) 
+                         .catch((error:any) => Observable.throw(error.json().error || 'Server error')); 
+    }
 }
