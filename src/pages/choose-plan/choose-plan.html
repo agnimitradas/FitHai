@@ -1,19 +1,37 @@
-<ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <button ion-item (click)="openPage(loginPage)">
-        Login
-      </button>
-      <button ion-item (click)="openPage(signupPage)">
-        Signup
-      </button>
-    </ion-list>
-  </ion-content>
-</ion-menu>
+<ion-header>
+   <h1 color="light" center text-center>Let us know about your Goal</h1>
+    
 
-<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+</ion-header>
+
+<ion-content fullscreen [attr.noScroll]="shouldScroll" >
+   <ion-card center text-center>
+        <ion-card-header>
+            <h1 padding color="light">GOAL 1</h1>
+        </ion-card-header>
+
+        <ion-card-content>
+                GOAL 1
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card center text-center>
+        <ion-card-header>
+            <h1 padding color="light">GOAL 2</h1>
+        </ion-card-header>
+
+        <ion-card-content>
+                GOAL 2
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card center text-center>
+        <ion-card-header>
+            <h1 padding color="light">GOAL 3</h1>
+        </ion-card-header>
+
+        <ion-card-content>
+                GOAL 3
+        </ion-card-content>
+    </ion-card>
+</ion-content>

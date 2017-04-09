@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { App, MenuController,ViewController  } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
 
 
 @Component({
@@ -10,11 +10,7 @@ import { App, MenuController,ViewController  } from 'ionic-angular';
 export class ChoosePlanPage {
   rootPage:any = ChoosePlanPage;
   
-  constructor(app: App, public menu: MenuController, private _viewController:ViewController) {
-    menu.enable(true);
-  }
-   ionViewWillEnter() {
-        this._viewController.showBackButton(false);
-        this.menu.open();
-    }
+  constructor(private _viewController:ViewController) {}
+  
+   
 }
