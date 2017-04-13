@@ -8,10 +8,6 @@ import { Chart } from 'chart.js';
 })
 export class AppHomePage {
 
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
-              public _menuController: MenuController) {}
-
   @ViewChild('doughnutCanvas') doughnutCanvas;
   @ViewChild('BarCanvas1') BarCanvas1;
   @ViewChild('BarCanvas2') BarCanvas2;
@@ -22,39 +18,45 @@ export class AppHomePage {
     barChart1: any;
     barChart2: any;
     barChart3: any;
+    waterIntake= 5;
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public _menuController: MenuController) {}
  
 toggleMenu(){
   this._menuController.open();
 }
 
-  ionViewDidLoad() {
-        this.totalCaloriesPerDay = this.navParams.data;
+  ionViewWillEnter() {
+        this.totalCaloriesPerDay = Math.round(this.navParams.data);
         let caloriesLeftForDay = this.totalCaloriesPerDay - 190;            //Hard Coded 190
         Chart.defaults.global.animation.easing = 'easeOutBounce';
         Chart.defaults.global.title.fullWidth = false;
-        
         Chart.pluginService.register({
-          beforeDraw: function(chart) {
+          beforeDraw: function(chart) {  
             var width = chart.chart.width,
                 height = chart.chart.height,
                 ctx = chart.chart.ctx;
-
-            ctx.restore();
             var fontSize = (height / 150).toFixed(2);
             ctx.font = fontSize + "em sans-serif";
             ctx.textBaseline = "middle";
             ctx.fillStyle = '#fff'
-
-            var text = caloriesLeftForDay + '\n KCAL LEFT',
+            ctx.imageSmoothingQuality = "high"
+            var text = caloriesLeftForDay,
                textX = Math.round((width - ctx.measureText(text).width) / 2),
-                textY = height / 2;
+               textY = height / 2;
             if(chart.chart.config.type === "doughnut"){
-               ctx.fillText(text, textX, textY);
-               ctx.save();
-            }    
-           
+                ctx.fillStyle = '#2ECC71';
+                ctx.fillRect(0, 0, width, height );
+                ctx.fillStyle = 'white';
+               ctx.fillText(text, textX, textY-15);
+               ctx.fillText('KCAL LEFT',textX-25,textY+20)
+             }    
           }
         });
+
+       
         this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
             type: 'doughnut',
             data: {
@@ -249,5 +251,8 @@ toggleMenu(){
             }
             }
         });
+   
   }
+
+  
 }

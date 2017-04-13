@@ -1,4 +1,7 @@
 choose-plan {
+    ion-header {
+        background-color: rgba(12, 12, 12, 0.49)
+    }
     ion-content {
         background: url('../assets/images/bg2.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -12,15 +15,14 @@ choose-plan {
     .icon {
         margin: 10px;
     }
-    .card-md {
-        background-color: rgba(12, 12, 12, 0.49)
+    .card {
+        background-color: rgba(12, 12, 12, 0.49);
     }
     ion-card {
         background-color: transparent;
         width: 100%;
         margin: 0;
-        margin-bottom: 5%;
-        position: relative;
+        position: fixed;
         top: 25%;
     }
     ion-card:last-of-type {

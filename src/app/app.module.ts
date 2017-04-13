@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http'
 
-import { LoginPage,RegisterPage,ChoosePlanPage,AppHomePage,HomePage } from '../pages/pages.export';
+import { LoginPage,RegisterPage,ChoosePlanPage,AppHomePage,HomePage} from '../pages/pages.export';
 import { RegistrationService } from '../shared/shared-pages.export';
 
 @NgModule({

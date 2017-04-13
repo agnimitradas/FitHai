@@ -12,3 +12,12 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.error-box {
+    font-weight: bold;
+    color: red;
+}
+
+ion-icon {
+    padding-right: 5%;
+    padding-left: 2%
+}

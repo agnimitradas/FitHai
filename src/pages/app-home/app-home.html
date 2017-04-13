@@ -1,7 +1,7 @@
 <ion-header no-margin>
 
     <ion-navbar>
-        <button color="secondary" (click)="toggleMenu()" ion-button style="float: right">
+        <button color="appHomeBg" (click)="toggleMenu()" ion-button style="float: right">
         <ion-icon name="menu"></ion-icon></button>
         <ion-title>Overview</ion-title>
     </ion-navbar>
@@ -10,7 +10,6 @@
 
 
 <ion-content>
-
     <div class="contentDoughnutCharts">
         <ion-row>
             <ion-col width-25>
@@ -29,27 +28,41 @@
     </div>
 
     <div class="contentBarCharts">
-        <ion-item>
-            <ion-row>
-                <ion-col>
-                    <div class="canvasDivBar1"><span color="darkGreenCustom">Carbs</span>
-                        <canvas center #BarCanvas1 class="bar"></canvas><span color="darkGreenCustom"> 120G left</span>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="canvasDivBar2"><span color="darkGreenCustom">Protein</span>
-                        <canvas #BarCanvas2 class="bar"></canvas><span color="darkGreenCustom">120G left</span>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="canvasDivBar3"><span color="darkGreenCustom">Fat</span>
-                        <canvas #BarCanvas3 class="bar"></canvas><span color="darkGreenCustom">120G left</span>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </ion-item>
+        <ion-card>
+            <ion-item>
+                <ion-row>
+                    <ion-col>
+                        <div class="canvasDivBar1"><span color="darkGreenCustom">Carbs</span>
+                            <canvas center #BarCanvas1 class="bar"></canvas><span color="darkGreenCustom"> 120G left</span>
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="canvasDivBar2"><span color="darkGreenCustom">Protein</span>
+                            <canvas #BarCanvas2 class="bar"></canvas><span color="darkGreenCustom">120G left</span>
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="canvasDivBar3"><span color="darkGreenCustom">Fat</span>
+                            <canvas #BarCanvas3 class="bar"></canvas><span color="darkGreenCustom">120G left</span>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+        </ion-card>
     </div>
     <div class="contentOthers">
-
+        <ion-card>
+            <ion-item>
+                <h1 color="darkGreenCustom">Water intake</h1>
+                <ion-badge item-right class="badge">{{waterIntake}} Liters of 7Liters</ion-badge>
+            </ion-item>
+        </ion-card>
     </div>
+    <ion-fab left bottom>
+        <button ion-fab color="darkGreenCustom"><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list side="top">
+            <button ion-button color="darkGreenCustom">Add Meals</button>
+            <button ion-button color="darkGreenCustom">Add Water</button>
+        </ion-fab-list>
+    </ion-fab>
 </ion-content>

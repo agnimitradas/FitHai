@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { LoginPage,RegisterPage,ChoosePlanPage,AppHomePage } from '../pages/pages.export';
 
 
 @Component({
@@ -22,4 +23,6 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
+  
 }

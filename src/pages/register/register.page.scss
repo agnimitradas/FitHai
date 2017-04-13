@@ -16,8 +16,7 @@ register-page {
         background-color: #fff;
         width: 100%;
         margin: 0;
-        margin-bottom: 5%;
-        position: relative;
+        position: fixed;
         top: 25%;
     }
     ion-card:last-of-type {
@@ -28,10 +27,6 @@ register-page {
     }
     input-cover activated {
         position: fixed;
-    }
-    .error-box {
-        font-weight: bold;
-        color: red;
     }
     .list a.item {
         border-top: 0px;
