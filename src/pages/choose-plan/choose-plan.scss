@@ -12,14 +12,11 @@ choose-plan {
     .icon {
         margin: 10px;
     }
-    .text-md-light {
-        color: rgb(85, 148, 179);
-    }
-    .card-md{
+    .card-md {
         background-color: rgba(12, 12, 12, 0.49)
     }
     ion-card {
-        background-color: #fff;
+        background-color: transparent;
         width: 100%;
         margin: 0;
         margin-bottom: 5%;
@@ -30,6 +27,12 @@ choose-plan {
         margin-bottom: 0 !important;
     }
     ion-item {
-        background-color: #fff;
+        background-color: transparent;
+    }
+    .input-cover {
+        background-color: transparent;
+    }
+    .input-has-focus .input-cover {
+        background-color: transparent;
     }
 }

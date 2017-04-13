@@ -1,37 +1,60 @@
 <ion-header>
-   <h1 color="light" center text-center>Let us know about your Goal</h1>
-    
-
+    <h1 center text-center>Gear up - <span color="light">Get ready</span></h1>
 </ion-header>
 
-<ion-content fullscreen [attr.noScroll]="shouldScroll" >
-   <ion-card center text-center>
-        <ion-card-header>
-            <h1 padding color="light">GOAL 1</h1>
-        </ion-card-header>
-
-        <ion-card-content>
-                GOAL 1
-        </ion-card-content>
-    </ion-card>
-
+<ion-content fullscreen [attr.noScroll]="shouldScroll">
     <ion-card center text-center>
-        <ion-card-header>
-            <h1 padding color="light">GOAL 2</h1>
-        </ion-card-header>
-
         <ion-card-content>
-                GOAL 2
+            <form [formGroup]="planForm" novalidate>
+                <ion-list radio-group [(ngModel)]="formValues.gender" [formControl]="planForm.controls['gender']" required>
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label>Male</ion-label>
+                                <ion-radio value="m"></ion-radio>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label>Female</ion-label>
+                                <ion-radio value="f"></ion-radio>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                </ion-list>
+
+                <h2 class="error-box" *ngIf="planForm.controls['gender'].hasError('required') && planForm.controls['gender'].dirty">* This field is required!</h2>
+
+                <div class="gorupInputs">
+                    <ion-item>
+                        <ion-label>Age:</ion-label>
+                        <ion-input type="number" [(ngModel)]="formValues.age" value="" [formControl]="planForm.controls['age']" required></ion-input>
+                    </ion-item>
+
+                    <h2 class="error-box" *ngIf="planForm.controls['age'].hasError('required') && planForm.controls['age'].touched">* This field is required!</h2>
+
+                </div>
+                <div class="gorupInputs">
+                    <ion-item>
+                        <ion-label>Height:</ion-label>
+                        <ion-input type="number" [(ngModel)]="formValues.height" value="" placeholder="in cm" [formControl]="planForm.controls['height']" required></ion-input>
+                    </ion-item>
+
+                    <h2 class="error-box" *ngIf="planForm.controls['height'].hasError('required') && planForm.controls['height'].touched">* This field is required!</h2>
+
+                </div>
+                <div class="gorupInputs">
+                    <ion-item>
+                        <ion-label>Weight:</ion-label>
+                        <ion-input type="number" [(ngModel)]="formValues.weight" value="" placeholder="in kgs" [formControl]="planForm.controls['weight']" required></ion-input>
+                    </ion-item>
+
+                    <h2 class="error-box" *ngIf="planForm.controls['weight'].hasError('required') && planForm.controls['weight'].touched">* This field is required!</h2>
+
+                </div>
+                <button ion-button full color="light" (click)='proceed()' [disabled]="planForm.invalid">Submit</button>
+            </form>
         </ion-card-content>
     </ion-card>
 
-    <ion-card center text-center>
-        <ion-card-header>
-            <h1 padding color="light">GOAL 3</h1>
-        </ion-card-header>
-
-        <ion-card-content>
-                GOAL 3
-        </ion-card-content>
-    </ion-card>
 </ion-content>

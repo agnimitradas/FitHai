@@ -1,0 +1,56 @@
+page-app-home {
+    ion-header {
+        background-color: rgba(46, 204, 113, 1);
+    }
+    .contentDoughnutCharts {
+        background-color: rgba(46, 204, 113, 1);
+        padding-top: 1%;
+        padding-bottom: 20%;
+    }
+    .doughnut {
+        // padding-left: 20%;
+        // padding-right: 20%;
+        // padding-top: 10%;
+        // padding-bottom: 10%;
+        background-color: rgba(46, 204, 113, 1);
+        // border-radius: 15px;
+    }
+    // canvas {
+    //     display: block;
+    //     height: 320px;
+    //     width: 375px;
+    // }
+    .right {
+        float: right;
+        padding-top: 60%;
+        padding-bottom: 70%;
+        color: #fff;
+    }
+    .left {
+        float: left;
+        padding-top: 60%;
+        padding-bottom: 70%;
+        color: #fff;
+    }
+    .canvasDivDoughnut {
+        position: absolute;
+        width: 100%;
+        top: 15%;
+        bottom: 5%
+    }
+    .canvasDivBar1 {
+        height: 100%;
+        width: 45%;
+    }
+    .canvasDivBar2 {
+        height: 100%;
+        width: 45%;
+    }
+    .canvasDivBar3 {
+        height: 100%;
+        width: 45%;
+    }
+    .contentBarCharts {
+        background-color: rgba(46, 204, 113, 1);
+    }
+}

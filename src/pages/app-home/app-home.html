@@ -1,0 +1,55 @@
+<ion-header no-margin>
+
+    <ion-navbar>
+        <button color="secondary" (click)="toggleMenu()" ion-button style="float: right">
+        <ion-icon name="menu"></ion-icon></button>
+        <ion-title>Overview</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div class="contentDoughnutCharts">
+        <ion-row>
+            <ion-col width-25>
+                <span class="left"><h4>3Eaten</h4></span>
+            </ion-col>
+            <ion-col width-50>
+                <div class="canvasDivDoughnut">
+                    <canvas #doughnutCanvas class="doughnut"></canvas>
+                </div>
+            </ion-col>
+            <ion-col width-25>
+                <span class="right"><h4>3Burned</h4></span>
+            </ion-col>
+        </ion-row>
+
+    </div>
+
+    <div class="contentBarCharts">
+        <ion-item>
+            <ion-row>
+                <ion-col>
+                    <div class="canvasDivBar1"><span color="darkGreenCustom">Carbs</span>
+                        <canvas center #BarCanvas1 class="bar"></canvas><span color="darkGreenCustom"> 120G left</span>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="canvasDivBar2"><span color="darkGreenCustom">Protein</span>
+                        <canvas #BarCanvas2 class="bar"></canvas><span color="darkGreenCustom">120G left</span>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="canvasDivBar3"><span color="darkGreenCustom">Fat</span>
+                        <canvas #BarCanvas3 class="bar"></canvas><span color="darkGreenCustom">120G left</span>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </div>
+    <div class="contentOthers">
+
+    </div>
+</ion-content>

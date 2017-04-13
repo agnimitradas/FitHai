@@ -1,13 +1,12 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http'
 
-import { LoginPage,RegisterPage,ChoosePlanPage } from '../pages/pages.export';
+import { LoginPage,RegisterPage,ChoosePlanPage,AppHomePage,HomePage } from '../pages/pages.export';
 import { RegistrationService } from '../shared/shared-pages.export';
 
 @NgModule({
@@ -16,7 +15,8 @@ import { RegistrationService } from '../shared/shared-pages.export';
     HomePage,
     LoginPage,
     RegisterPage,
-    ChoosePlanPage
+    ChoosePlanPage,
+    AppHomePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -27,7 +27,8 @@ import { RegistrationService } from '../shared/shared-pages.export';
     HomePage,
     LoginPage,
     RegisterPage,
-    ChoosePlanPage
+    ChoosePlanPage,
+    AppHomePage
   ],
   providers: [
     StatusBar,

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
-import { LoginPage } from '../pages.export';
+import { LoginPage, ChoosePlanPage } from '../pages.export';
 
 @Component({
   selector: 'page-home',
@@ -19,7 +19,7 @@ export class HomePage {
   }
 
   fbLogIn(){
-    alert("FB");
+    this.navCtrl.push(ChoosePlanPage);
   }
   
   googleLogin(){
