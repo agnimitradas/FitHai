@@ -9,6 +9,8 @@ import { HttpModule } from '@angular/http'
 import { LoginPage,RegisterPage,ChoosePlanPage,AppHomePage,HomePage} from '../pages/pages.export';
 import { RegistrationService } from '../shared/shared-pages.export';
 
+import { GoogleSigninComponent } from './googlelogin/googlelogin.component';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -16,7 +18,8 @@ import { RegistrationService } from '../shared/shared-pages.export';
     LoginPage,
     RegisterPage,
     ChoosePlanPage,
-    AppHomePage
+    AppHomePage,
+    GoogleSigninComponent,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
