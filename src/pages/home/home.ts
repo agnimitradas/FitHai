@@ -11,7 +11,7 @@ import { LoginPage, ChoosePlanPage } from '../pages.export';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-    
+   
   }
 
   oldSchoolLogIn(){
